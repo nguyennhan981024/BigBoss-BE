@@ -13,7 +13,7 @@ public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
     @Query("SELECT ca FROM Category ca WHERE ca.id = ?1")
     Optional<Category> findCategoryById(Integer id);
-    @Query("SELECT ca FROM Category ca")
+    @Query("SELECT ca FROM Category")
     Page<Category> getAllCategories(Pageable pageable);
     @Query("SELECT ca FROM Category ca WHERE ca.name = ?1")
     Category findByCategoryName(String name);
