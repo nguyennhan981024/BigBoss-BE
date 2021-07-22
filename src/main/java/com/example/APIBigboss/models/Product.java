@@ -17,7 +17,6 @@ public class Product {
     private String status;
     private String img;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="cate_name")
     @JoinColumn(name="cate_id")
     private Category category;
 
