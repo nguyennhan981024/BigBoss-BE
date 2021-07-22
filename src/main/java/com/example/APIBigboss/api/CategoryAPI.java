@@ -18,8 +18,8 @@ public class CategoryAPI {
     private CategoryRepository categoryRepository;
 
     @GetMapping
-    public ResponseEntity<Page<Category>> getAllCategories(Pageable pageable){
-        return ResponseEntity.ok(categoryRepository.getAllCategories(pageable));
+    public ResponseEntity<Category> getAllCategories(){
+        return ResponseEntity.ok(categoryRepository.getAllCategories());
     }
 
     @GetMapping("/{id}")
