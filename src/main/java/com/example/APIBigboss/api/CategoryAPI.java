@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.List;
 import java.util.Optional;
 @RestController
 @RequestMapping(path = "api/v1/category")
@@ -18,7 +19,7 @@ public class CategoryAPI {
     private CategoryRepository categoryRepository;
 
     @GetMapping
-    public ResponseEntity<Category> getAllCategories(){
+    public ResponseEntity<List<Category>> getAllCategories(){
         return ResponseEntity.ok(categoryRepository.getAllCategories());
     }
 
