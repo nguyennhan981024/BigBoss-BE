@@ -18,8 +18,8 @@ public class Product {
     private String img;
     private String cate_name;
     private int cate_id;
-    @ManyToOne
-    @JoinColumn(name="category_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
     public Product() {
@@ -90,4 +90,5 @@ public class Product {
     public void setCategory(Category category) {
         this.category = category;
     }
+
 }
