@@ -18,21 +18,17 @@ public class Product {
     private String img;
     private String cate_name;
     private int cate_id;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "category_id",referencedColumnName = "id")
-    private Category category;
 
     public Product() {
     }
 
-    public Product(int id, String name, String status, String img, String cate_name, int cate_id, Category category) {
+    public Product(int id, String name, String status, String img, String cate_name, int cate_id) {
         this.id = id;
         this.name = name;
         this.status = status;
         this.img = img;
         this.cate_name = cate_name;
         this.cate_id = cate_id;
-        this.category = category;
     }
 
     public int getId() {
@@ -82,13 +78,4 @@ public class Product {
     public void setCate_id(int cate_id) {
         this.cate_id = cate_id;
     }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
 }

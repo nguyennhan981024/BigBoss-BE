@@ -15,16 +15,12 @@ public class Category {
     private int id;
     @NotNull
     private String name;
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
-    private Set<Product> products;
     public Category() {
     }
 
-    public Category(int id, String name, Set<Product> products) {
+    public Category(int id, String name) {
         this.id = id;
         this.name = name;
-        this.products = products;
     }
 
     public int getId() {
@@ -43,11 +39,4 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
-    }
 }
