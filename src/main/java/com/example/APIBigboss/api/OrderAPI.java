@@ -1,6 +1,6 @@
 package com.example.APIBigboss.api;
 
-import com.example.APIBigboss.models.Order;
+import com.example.APIBigboss.models.Orders;
 import com.example.APIBigboss.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ public class OrderAPI {
    private OrderRepository orderRepository;
 
     @GetMapping
-    public ResponseEntity<List<Order>> getAllOrder(){
+    public ResponseEntity<List<Orders>> getAllOrder(){
         return ResponseEntity.ok(orderRepository.getAllOrder());
     }
 //    @GetMapping("/{id}")
@@ -31,9 +31,9 @@ public class OrderAPI {
 //        return ResponseEntity.ok(optionalCategory.get());
 //    }
     @PostMapping("/add")
-    public ResponseEntity<?> createOrder(@Valid @RequestBody Order order) {
+    public ResponseEntity<?> createOrder(@Valid @RequestBody Orders order) {
 
-        Order orderSaved = orderRepository.save(order);
+        Orders orderSaved = orderRepository.save(order);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")

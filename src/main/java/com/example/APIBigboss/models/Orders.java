@@ -3,13 +3,13 @@ package com.example.APIBigboss.models;
 import javax.persistence.*;
 
 @Entity
-public class Order {
+public class Orders {
     @Id
     // set up primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String code_order;
-    private String customerName;
+    private String userName;
     private String phoneNumber;
     private String email;
     private String address;
@@ -19,21 +19,7 @@ public class Order {
     private String note;
     private String option;
 
-    public Order() {
-    }
-
-    public Order(int id, String code_order, String customerName, String phoneNumber, String email, String address, int city, int district, int ward, String note, String option) {
-        this.id = id;
-        this.code_order = code_order;
-        this.customerName = customerName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-        this.city = city;
-        this.district = district;
-        this.ward = ward;
-        this.note = note;
-        this.option = option;
+    public Orders() {
     }
 
     public int getId() {
@@ -52,6 +38,13 @@ public class Order {
         this.code_order = code_order;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -117,11 +110,17 @@ public class Order {
         this.option = option;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public Orders(int id, String code_order, String userName, String phoneNumber, String email, String address, int city, int district, int ward, String note, String option) {
+        this.id = id;
+        this.code_order = code_order;
+        this.userName = userName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.city = city;
+        this.district = district;
+        this.ward = ward;
+        this.note = note;
+        this.option = option;
     }
 }
