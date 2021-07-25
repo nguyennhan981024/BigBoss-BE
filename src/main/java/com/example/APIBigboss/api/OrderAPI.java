@@ -1,8 +1,6 @@
 package com.example.APIBigboss.api;
 
 import com.example.APIBigboss.models.Order;
-import com.example.APIBigboss.payload.response.MessageResponse;
-import com.example.APIBigboss.repository.CategoryRepository;
 import com.example.APIBigboss.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
