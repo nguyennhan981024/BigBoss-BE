@@ -2,7 +2,7 @@ package com.example.APIBigboss.models;
 
 
 import com.sun.istack.NotNull;
-import org.hibernate.mapping.Set;
+import java.util.Set;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
