@@ -17,8 +17,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping(path = "api/v1/order")
 public class OrderAPI {
-    @Autowired
-    private OrderRepository orderRepository;
+   @Autowired
+   private OrderRepository orderRepository;
 
     @GetMapping
     public ResponseEntity<List<Order>> getAllOrder(){
@@ -35,11 +35,6 @@ public class OrderAPI {
     @PostMapping("/add")
     public ResponseEntity<?> createOrder(@Valid @RequestBody Order order) {
 
-        if (orderRepository.existsByName(order.getCode_order())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("Error: Order code is already!"));
-        }
         Order orderSaved = orderRepository.save(order);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
