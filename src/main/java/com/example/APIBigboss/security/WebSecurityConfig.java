@@ -26,7 +26,6 @@ import java.util.logging.Filter;
 
 
 @Configuration
-@EnableWebSecurity
 @EnableGlobalMethodSecurity(
     // securedEnabled = true,
     // jsr250Enabled = true,
@@ -41,12 +40,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public AuthTokenFilter authenticationJwtTokenFilter() {
         return new AuthTokenFilter();
-    }
-
-    @Override
-    @Autowired
-    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-        authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
     @Bean
