@@ -48,7 +48,7 @@ public class AuthController {
     @Autowired
     JwtUtils jwtUtils;
 
-    @PostMapping("/login")
+    @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
         Authentication authentication = authenticationManager.authenticate(
@@ -65,10 +65,11 @@ public class AuthController {
         return ResponseEntity.ok(new JwtResponse(jwt,
             userDetails.getId(),
             userDetails.getUsername(),
-            userDetails.getEmail()));
+            userDetails.getEmail(),
+            roles));
     }
 
-    @PostMapping("/register")
+    @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 
         if (userRepository.existsByEmail(signUpRequest.getEmail())) {
