@@ -17,7 +17,7 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int userID;
 
     @NotBlank
     @Size(max = 20)
@@ -53,11 +53,11 @@ public class User {
 
 
     public int getUserID() {
-        return id;
+        return userID;
     }
 
     public void setUserID(int userID) {
-        this.id = userID;
+        this.userID = userID;
     }
 
     public String getUsername() {
