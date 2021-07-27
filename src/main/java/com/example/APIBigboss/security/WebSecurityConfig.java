@@ -25,7 +25,7 @@ import java.util.logging.Filter;
 
 
 @Configuration
-//@EnableWebSecurity
+@EnableWebSecurity
 //@EnableGlobalMethodSecurity(
 //    // securedEnabled = true,
 //    // jsr250Enabled = true,
@@ -61,6 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.httpBasic().disable();
         http.cors().and().csrf().disable()
             .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
