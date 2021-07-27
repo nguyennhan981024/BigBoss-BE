@@ -1,6 +1,6 @@
 package com.example.APIBigboss.security.jwt;
 
-import com.example.phuotstore.security.service.UserDetailsImpl;
+import com.example.APIBigboss.security.service.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
