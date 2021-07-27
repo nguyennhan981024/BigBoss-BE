@@ -17,7 +17,7 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userID;
+    private int id;
 
     @NotBlank
     @Size(max = 20)
@@ -38,7 +38,7 @@ public class User {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "userRole",
-        joinColumns = @JoinColumn(name = "userID"),
+        joinColumns = @JoinColumn(name = "id"),
         inverseJoinColumns = @JoinColumn(name = "roleID"))
     private Set<Role> roles = new HashSet<>();
 
@@ -53,11 +53,11 @@ public class User {
 
 
     public int getUserID() {
-        return userID;
+        return id;
     }
 
     public void setUserID(int userID) {
-        this.userID = userID;
+        this.id = userID;
     }
 
     public String getUsername() {
