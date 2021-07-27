@@ -1,7 +1,7 @@
 package com.example.APIBigboss.security.service;
 
-import com.example.APIBigboss.repository.UserRepository;
 import com.example.APIBigboss.models.User;
+import com.example.APIBigboss.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,7 +1,9 @@
 package com.example.APIBigboss.payload.request;
 
+
 public class LoginRequest {
     private String username;
+
     private String password;
 
     public String getUsername() {

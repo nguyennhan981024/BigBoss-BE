@@ -1,4 +1,4 @@
-package com.example.APIBigboss.payload.request;
+package com.example.phuotstore.dto;
 
 
 import javax.validation.constraints.Email;
@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Set;
 
-public class SignupRequest {
+public class UserDTO {
     @NotBlank
     @Size(min = 3, max = 20)
     private String username;
@@ -15,6 +15,8 @@ public class SignupRequest {
     @Size(max = 50)
     @Email
     private String email;
+
+    private String avatar;
 
     @NotBlank
     @Size(max = 120)
@@ -72,5 +74,13 @@ public class SignupRequest {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }
