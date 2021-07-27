@@ -26,14 +26,12 @@ import java.util.logging.Filter;
 
 
 @Configuration
+@EnableWebSecurity
 @EnableGlobalMethodSecurity(
     // securedEnabled = true,
     // jsr250Enabled = true,
     prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    UserDetailsServiceImpl userDetailsService;
-
     @Autowired
     private AuthEntryPointJwt unauthorizedHandler;
 
