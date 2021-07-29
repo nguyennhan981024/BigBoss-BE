@@ -12,7 +12,8 @@ import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
     Boolean existsByName(String name);
-
+    @Query("SELECT pd FROM Product pd WHERE pd.id = ?1")
+    Optional<Product> findProductById(Integer id);
     @Query("SELECT pd FROM Product pd")
     List<Product> getAllProduct();
 }

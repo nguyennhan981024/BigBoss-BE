@@ -42,27 +42,27 @@ public class ProductAPI {
                 .toUri();
         return ResponseEntity.created(location).body(productSave);
     }
-//    @PutMapping("/update/{id}")
-//    public ResponseEntity<?> updateCategory(@PathVariable int id,
-//                                            @Valid @RequestBody Category category){
-//        Optional<Category> optionalCategory= categoryRepository.findCategoryById(id);
-//
-//        if(!optionalCategory.isPresent()){
-//            return ResponseEntity.unprocessableEntity().build();
-//        }
-//        category.setId(optionalCategory.get().getId());
-//        categoryRepository.save(category);
-//        return ResponseEntity.ok(optionalCategory.get());
-//    }
-//
-//    @DeleteMapping("/delete/{id}")
-//    public ResponseEntity<Category> deleteCategory(@PathVariable int id){
-//        Optional<Category> optionalCategory= productRepository.findCategoryById(id);
-//
-//        if(!optionalCategory.isPresent()){
-//            return ResponseEntity.unprocessableEntity().build();
-//        }
-//        categoryRepository.delete(optionalCategory.get());
-//        return ResponseEntity.noContent().build();
-//    }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateProduct(@PathVariable int id,
+                                            @Valid @RequestBody Product product){
+        Optional<Product> optionalProduct= productRepository.findProductById(id);
+
+        if(!optionalProduct.isPresent()){
+            return ResponseEntity.unprocessableEntity().build();
+        }
+        product.setId(optionalProduct.get().getId());
+        productRepository.save(product);
+        return ResponseEntity.ok(optionalProduct.get());
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Product> deleteProduct(@PathVariable int id){
+        Optional<Product> optionalProduct= productRepository.findProductById(id);
+
+        if(!optionalProduct.isPresent()){
+            return ResponseEntity.unprocessableEntity().build();
+        }
+        productRepository.delete(optionalProduct.get());
+        return ResponseEntity.noContent().build();
+    }
 }
