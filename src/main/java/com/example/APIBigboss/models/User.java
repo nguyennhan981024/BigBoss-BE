@@ -32,8 +32,11 @@ public class User {
     @Size(max = 120)
     private String password;
 
-    private String avatar;
-    private String phone;
+    private String male;
+    private String height;
+    private String weight;
+    private String img;
+    private String phoneNumber;
     private String address;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -50,7 +53,6 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
 
     public int getUserID() {
         return userID;
@@ -84,20 +86,44 @@ public class User {
         this.password = password;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public String getMale() {
+        return male;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setMale(String male) {
+        this.male = male;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getHeight() {
+        return height;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getAddress() {
@@ -108,12 +134,12 @@ public class User {
         this.address = address;
     }
 
-    public String getAvatar() {
-        return avatar;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
 

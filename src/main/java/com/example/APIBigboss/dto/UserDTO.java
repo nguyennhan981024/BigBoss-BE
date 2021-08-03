@@ -1,4 +1,4 @@
-package com.example.phuotstore.dto;
+package com.example.APIBigboss.dto;
 
 
 import javax.validation.constraints.Email;
@@ -15,15 +15,15 @@ public class UserDTO {
     @Size(max = 50)
     @Email
     private String email;
-
-    private String avatar;
+    private String male;
+    private String height;
+    private String weight;
+    private String img;
+    private String phoneNumber;
 
     @NotBlank
     @Size(max = 120)
     private String password;
-
-    private String phone;
-
     private String address;
 
     private Set<String> roles;
@@ -44,28 +44,52 @@ public class UserDTO {
         this.email = email;
     }
 
+    public String getMale() {
+        return male;
+    }
+
+    public void setMale(String male) {
+        this.male = male;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Set<String> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<String> roles) {
-        this.roles = roles;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public String getAddress() {
@@ -76,11 +100,11 @@ public class UserDTO {
         this.address = address;
     }
 
-    public String getAvatar() {
-        return avatar;
+    public Set<String> getRoles() {
+        return roles;
     }
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public void setRoles(Set<String> roles) {
+        this.roles = roles;
     }
 }
