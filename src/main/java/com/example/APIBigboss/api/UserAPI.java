@@ -51,7 +51,7 @@ public class UserAPI {
         return ResponseEntity.ok(optionalUser.get());
     }
 
-    @PutMapping("update/{id}")
+    @PostMapping("update/{id}")
     public ResponseEntity<?> updateUser(@PathVariable int id, @Valid @RequestBody UserDTO userDTO) {
         Optional<User> optionalUser = userRepository.findUserByID(id);
         if (!optionalUser.isPresent()) {
