@@ -2,6 +2,7 @@ package com.example.APIBigboss.api;
 
 import com.example.APIBigboss.models.Orders;
 import com.example.APIBigboss.repository.OrderRepository;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,14 +23,11 @@ public class OrderAPI {
     public ResponseEntity<List<Orders>> getAllOrder(){
         return ResponseEntity.ok(orderRepository.getAllOrder());
     }
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Category> getCategoryByID(@PathVariable int id) {
-//        Optional<Category> optionalCategory = categoryRepository.findCategoryById(id);
-//        if (!optionalCategory.isPresent()) {
-//            return ResponseEntity.unprocessableEntity().build();
-//        }
-//        return ResponseEntity.ok(optionalCategory.get());
-//    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Orders> getOrderByID(@PathVariable int id) {
+        Optional<Orders> optionalOrders = orderRepository.findById(id);
+        return optionalOrders.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.unprocessableEntity().build());
+    }
     @PostMapping("/add")
     public ResponseEntity<?> createOrder(@Valid @RequestBody Orders order) {
 
@@ -41,18 +39,18 @@ public class OrderAPI {
                 .toUri();
         return ResponseEntity.created(location).body(orderSaved);
     }
-//    @PutMapping("/update/{id}")
-//    public ResponseEntity<?> updateCategory(@PathVariable int id,
-//                                            @Valid @RequestBody Category category){
-//        Optional<Category> optionalCategory= categoryRepository.findCategoryById(id);
-//
-//        if(!optionalCategory.isPresent()){
-//            return ResponseEntity.unprocessableEntity().build();
-//        }
-//        category.setId(optionalCategory.get().getId());
-//        categoryRepository.save(category);
-//        return ResponseEntity.ok(optionalCategory.get());
-//    }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateOrder(@PathVariable int id,
+                                            @Valid @RequestBody Orders order){
+        Optional<Orders> optionalOrders= orderRepository.findById(id);
+
+        if(!optionalOrders.isPresent()){
+            return ResponseEntity.unprocessableEntity().build();
+        }
+        order.setId(optionalOrders.get().getId());
+        orderRepository.save(order);
+        return ResponseEntity.ok(optionalOrders.get());
+    }
 
 //    @DeleteMapping("/delete/{id}")
 //    public ResponseEntity<Category> deleteCategory(@PathVariable int id){
