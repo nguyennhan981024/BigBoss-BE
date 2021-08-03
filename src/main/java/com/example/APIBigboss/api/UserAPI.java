@@ -93,8 +93,8 @@ public class UserAPI {
         user.setPhoneNumber(userDTO.getPhoneNumber());
         user.setAddress(userDTO.getAddress());
         user.setHeight(userDTO.getHeight());
-        user.setMale(user.getMale());
-        user.setWeight(user.getWeight());
+        user.setMale(userDTO.getMale());
+        user.setWeight(userDTO.getWeight());
         user.setImg(userDTO.getImg());
         userRepository.save(user);
         return ResponseEntity.ok(optionalUser.get());
