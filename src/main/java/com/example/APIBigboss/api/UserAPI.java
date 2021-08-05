@@ -89,7 +89,7 @@ public class UserAPI {
             });
         }
         user.setRoles(roles);
-        user.setPassword(userDTO.getPassword());
+        user.setPassword(optionalUser.get().getPassword());
         user.setUsername(userDTO.getUsername());
         user.setEmail(userDTO.getEmail());
         user.setUserID(optionalUser.get().getUserID());
