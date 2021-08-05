@@ -29,7 +29,7 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(int id, String code_order, String userName, String phoneNumber, String email, String address, int city, int district, int ward, String note, String option, String user_register, String email_register, String create_at, String item_cart, String status, String total) {
+    public Orders(int id, String code_order, String userName, String phoneNumber, String email, String address, String city, String district, String ward, String note, String option, String user_register, String email_register, String create_at, String item_cart, String status, String total) {
         this.id = id;
         this.code_order = code_order;
         this.userName = userName;
@@ -97,27 +97,27 @@ public class Orders {
         this.address = address;
     }
 
-    public int getCity() {
+    public String getCity() {
         return city;
     }
 
-    public void setCity(int city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
-    public int getDistrict() {
+    public String getDistrict() {
         return district;
     }
 
-    public void setDistrict(int district) {
+    public void setDistrict(String district) {
         this.district = district;
     }
 
-    public int getWard() {
+    public String getWard() {
         return ward;
     }
 
-    public void setWard(int ward) {
+    public void setWard(String ward) {
         this.ward = ward;
     }
 
