@@ -13,9 +13,9 @@ public class Orders {
     private String phoneNumber;
     private String email;
     private String address;
-    private int city;
-    private int district;
-    private int ward;
+    private String city;
+    private String district;
+    private String ward;
     private String note;
     private String option;
     private String user_register;
