@@ -18,8 +18,35 @@ public class Orders {
     private int ward;
     private String note;
     private String option;
+    private String user_register;
+    private String email_register;
+    private String create_at;
+    @Column(columnDefinition = "TEXT")
+    private String item_cart;
+    private String status;
+    private String total;
 
     public Orders() {
+    }
+
+    public Orders(int id, String code_order, String userName, String phoneNumber, String email, String address, int city, int district, int ward, String note, String option, String user_register, String email_register, String create_at, String item_cart, String status, String total) {
+        this.id = id;
+        this.code_order = code_order;
+        this.userName = userName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.city = city;
+        this.district = district;
+        this.ward = ward;
+        this.note = note;
+        this.option = option;
+        this.user_register = user_register;
+        this.email_register = email_register;
+        this.create_at = create_at;
+        this.item_cart = item_cart;
+        this.status = status;
+        this.total = total;
     }
 
     public int getId() {
@@ -110,17 +137,51 @@ public class Orders {
         this.option = option;
     }
 
-    public Orders(int id, String code_order, String userName, String phoneNumber, String email, String address, int city, int district, int ward, String note, String option) {
-        this.id = id;
-        this.code_order = code_order;
-        this.userName = userName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-        this.city = city;
-        this.district = district;
-        this.ward = ward;
-        this.note = note;
-        this.option = option;
+    public String getUser_register() {
+        return user_register;
+    }
+
+    public void setUser_register(String user_register) {
+        this.user_register = user_register;
+    }
+
+    public String getEmail_register() {
+        return email_register;
+    }
+
+    public void setEmail_register(String email_register) {
+        this.email_register = email_register;
+    }
+
+    public String getCreate_at() {
+        return create_at;
+    }
+
+    public void setCreate_at(String create_at) {
+        this.create_at = create_at;
+    }
+
+    public String getItem_cart() {
+        return item_cart;
+    }
+
+    public void setItem_cart(String item_cart) {
+        this.item_cart = item_cart;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
     }
 }
