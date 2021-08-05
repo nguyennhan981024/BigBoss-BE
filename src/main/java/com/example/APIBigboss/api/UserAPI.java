@@ -89,6 +89,8 @@ public class UserAPI {
             });
         }
         user.setRoles(roles);
+        user.setUsername(userDTO.getUsername());
+        user.setEmail(userDTO.getEmail());
         user.setUserID(optionalUser.get().getUserID());
         user.setPhoneNumber(userDTO.getPhoneNumber());
         user.setAddress(userDTO.getAddress());
