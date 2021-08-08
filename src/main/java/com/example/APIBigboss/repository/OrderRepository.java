@@ -9,6 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface OrderRepository extends JpaRepository<Orders, Integer> {
-    @Query("SELECT od FROM Orders od ")
+    @Query("SELECT od FROM Orders od order by od.id desc")
     List<Orders> getAllOrder();
 }
