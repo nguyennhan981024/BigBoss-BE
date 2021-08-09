@@ -52,14 +52,14 @@ public class OrderAPI {
         return ResponseEntity.ok(optionalOrders.get());
     }
 
-//    @DeleteMapping("/delete/{id}")
-//    public ResponseEntity<Category> deleteCategory(@PathVariable int id){
-//        Optional<Category> optionalCategory= categoryRepository.findCategoryById(id);
-//
-//        if(!optionalCategory.isPresent()){
-//            return ResponseEntity.unprocessableEntity().build();
-//        }
-//        categoryRepository.delete(optionalCategory.get());
-//        return ResponseEntity.noContent().build();
-//    }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Orders> deleteOrder(@PathVariable int id){
+        Optional<Orders> ordersOptional = orderRepository.findOrderById(id);
+
+        if(!ordersOptional.isPresent()){
+            return ResponseEntity.unprocessableEntity().build();
+        }
+        orderRepository.delete(ordersOptional.get());
+        return ResponseEntity.noContent().build();
+    }
 }
