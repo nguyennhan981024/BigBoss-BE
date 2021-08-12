@@ -73,16 +73,16 @@ public class Orders {
         return userName;
     }
     public String getStatusBuy(){
-        return status_buy
+        return status_buy;
     }
     public String getStatusRent(){
-        return status_rent
+        return status_rent;
     }
     public void setStatusBuy(String status_buy){
-        this.status_buy = status_buy
+        this.status_buy = status_buy;
     }
     public void setStatusRent(String status_rent){
-        this.status_rent = status_rent
+        this.status_rent = status_rent;
     }
     public void setUserName(String userName) {
         this.userName = userName;
