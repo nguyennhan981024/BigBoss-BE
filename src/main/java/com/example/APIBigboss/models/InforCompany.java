@@ -15,6 +15,7 @@ public class InforCompany {
     private int id;
     @NotNull
     private String base64;
+    @Column(columnDefinition = "TEXT")
     private String content;
     public InforCompany() {
     }
