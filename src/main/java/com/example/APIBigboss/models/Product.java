@@ -15,6 +15,7 @@ public class Product {
     @NotNull
     private String name;
     private String status;
+    @Column(columnDefinition = "TEXT")
     private String img;
     private String cate_name;
     @Column(columnDefinition = "TEXT")
