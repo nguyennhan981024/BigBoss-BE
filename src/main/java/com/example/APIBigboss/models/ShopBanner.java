@@ -14,7 +14,9 @@ public class ShopBanner {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull
+    @Column(columnDefinition = "TEXT")
     private String base64;
+    @Column(columnDefinition = "TEXT")
     private String content;
     public ShopBanner() {
     }

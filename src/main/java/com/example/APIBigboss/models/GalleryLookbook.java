@@ -16,6 +16,7 @@ public class GalleryLookbook {
     @NotNull
     private String name;
     private int cate_id;
+    @Column(columnDefinition = "TEXT")
     private String img;
     private String create_at;
     public GalleryLookbook() {

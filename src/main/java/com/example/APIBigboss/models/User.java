@@ -35,6 +35,7 @@ public class User {
     private String male;
     private String height;
     private String weight;
+    @Column(columnDefinition = "TEXT")
     private String img;
     private String phoneNumber;
     private String address;

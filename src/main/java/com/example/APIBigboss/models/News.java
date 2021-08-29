@@ -16,8 +16,11 @@ public class News {
     @NotNull
     private String title;
     private String date;
+    @Column(columnDefinition = "TEXT")
     private String author;
+    @Column(columnDefinition = "TEXT")
     private String summary;
+    @Column(columnDefinition = "TEXT")
     private String img;
     public News() {
     }

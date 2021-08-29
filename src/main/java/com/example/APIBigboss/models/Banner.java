@@ -14,6 +14,7 @@ public class Banner {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull
+    @Column(columnDefinition = "TEXT")
     private String base64;
     public Banner() {
     }

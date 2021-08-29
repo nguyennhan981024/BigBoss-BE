@@ -14,6 +14,7 @@ public class InforCompany {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull
+    @Column(columnDefinition = "TEXT")
     private String base64;
     @Column(columnDefinition = "TEXT")
     private String content;

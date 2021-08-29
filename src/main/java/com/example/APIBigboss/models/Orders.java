@@ -16,6 +16,7 @@ public class Orders {
     private String city;
     private String district;
     private String ward;
+    @Column(columnDefinition = "TEXT")
     private String note;
     private String option;
     private String user_register;

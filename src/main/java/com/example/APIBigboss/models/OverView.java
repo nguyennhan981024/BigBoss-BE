@@ -14,8 +14,11 @@ public class OverView {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull
+    @Column(columnDefinition = "TEXT")
     private String paragraph;
+    @Column(columnDefinition = "TEXT")
     private String author;
+    @Column(columnDefinition = "TEXT")
     private String img;
     public OverView() {
     }

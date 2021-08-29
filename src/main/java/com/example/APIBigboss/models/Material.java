@@ -16,7 +16,9 @@ public class Material {
     @NotNull
     private String name;
     private int cate_id;
+    @Column(columnDefinition = "TEXT")
     private String describe;
+    @Column(columnDefinition = "TEXT")
     private String base64;
     public Material() {
     }
